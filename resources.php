@@ -11,8 +11,8 @@
 
 require_once 'dbcon.php';
 $cid = filter_input(INPUT_GET, 'cid', FILTER_VALIDATE_INT) or die('Missing/illegal parameter');
-$sql = 'SELECT r.resources_name, r.Resource_Detail
-FROM Resources r
+$sql = 'SELECT r.resources_name, r.resource_retail
+FROM resources r
 WHERE r.resources_id=?';
 $stmt = $link->prepare($sql);
 $stmt->bind_param('i', $cid);
